@@ -1,0 +1,18 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="{% static 'student/css/style.css' %}" />
+  </head>
+  <body>
+    <h1>Student Profile</h1>
+    <img src="{% static 'student/images/logo.png' %}" width="150" />
+    {% if student %}
+    <h2>{{ student.name }}</h2>
+    <img src="{{ student.photo.url }}" width="200" />
+    {% else %}
+    <p>No student yet</p>
+    {% endif %}
+  </body>
+</html>
